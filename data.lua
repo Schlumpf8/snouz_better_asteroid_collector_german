@@ -1,12 +1,37 @@
+require("__base__/prototypes/factoriopedia-util");
 
-local item_sounds = require("__base__.prototypes.item_sounds")
-local hit_effects = require ("__base__.prototypes.entity.hit-effects")
-local sounds = require ("__base__.prototypes.entity.sounds")
 
-local graphics = "__snouz_better_asteroid_collector__/graphics"
-local ENTITYPATH = graphics .. "/entity/"
 
 if data.raw["asteroid-collector"]["asteroid-collector"] then
+
+  local item_sounds = require("__base__.prototypes.item_sounds")
+  local hit_effects = require ("__base__.prototypes.entity.hit-effects")
+  local sounds = require ("__base__.prototypes.entity.sounds")
+
+  local graphics = "__snouz_better_asteroid_collector__/graphics"
+  local ENTITYPATH = graphics .. "/entity/"
+
+
+  local factoriopedia_snouz_better_asteroid_collector =
+  {
+    hide_factoriopedia_gradient = true,
+    init =
+    [[
+      game.simulation.camera_position = {0, 0}
+
+      for x = -8, 8, 1 do
+        for y = -3, 3 do
+          game.surfaces[1].set_tiles{{position = {x, y}, name = "empty-space"}}
+        end
+      end
+      game.surfaces[1].create_entities_from_blueprint_string
+      {
+        string = "0eNqlkkEKgzAQRe8y62ShNdF6ldJFqmMZiElIYmmR3L3RCt10Uch25v8HD/4KN72g82Qi9CvQYE2A/rJCoLtRersZNSP0oEJEb2nkg9Uah2g9JAZkRnxCX6Urg0gaP2VnA0WyZqvnL29ODF45JXLjwAWnBuROqzhZP/PJLmZUeyexH4C6FFCVAg4FWaogSxVkqUJbqtCWKvwHyJOiiHMOfTfK4IE+7Mi6q5ruJKSUjZDinNIbTSvvCQ==",
+        position = {-1, -1}
+      }
+      game.surfaces[1].create_entity{name = "snouz_better_asteroid_collector", position = {0, -1}, direction = defines.direction.east}
+    ]]
+  }
 
   data:extend(
   {
@@ -46,6 +71,7 @@ if data.raw["asteroid-collector"]["asteroid-collector"] then
         {type = "item", name = "snouz_better_asteroid_collector", amount = 1},
         {type = "fluid", name = "fluoroketone-hot", amount = 3, temperature = 180, ignored_by_stats = 3, ignored_by_productivity = 3}
       },
+      main_product = "snouz_better_asteroid_collector",
       crafting_machine_tint =
       {
         primary = {r = 0.460, g = 0.188, b = 0.649, a = 1.000}, -- #752fa5ff
@@ -319,6 +345,7 @@ if data.raw["asteroid-collector"]["asteroid-collector"] then
   ascol.collection_radius = 12.5--7.5
   ascol.collection_box_offset = 9.0 --5.0
   --ascol.deposit_radius = --1.5
+  ascol.factoriopedia_simulation = factoriopedia_snouz_better_asteroid_collector
   data:extend({ascol})
 end
 
