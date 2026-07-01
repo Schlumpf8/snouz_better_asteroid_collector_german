@@ -1,10 +1,10 @@
 {
   "name": "snouz_better_asteroid_collector",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "title": "Asteroid Collector MK2",
   "author": "snouz",
   "homepage": "https://github.com/snouz/snouz_better_asteroid_collector",
-  "factorio_version": "2.0",
+  "factorio_version": "2.1",
   "description": "This mod adds an asteroid collector upgrade.",
   "dependencies": [
     "base",

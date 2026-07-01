@@ -54,7 +54,7 @@ if data.raw["asteroid-collector"]["asteroid-collector"] then
       type = "recipe",
       name = "snouz_better_asteroid_collector",
       icon = graphics .. "/icons/snouz_better_asteroid_collector.png",
-      category = "electromagnetics",
+      categories = {"electromagnetics"},
       subgroup = "space-platform",
       order = "de[asteroid-collector2]",
       energy_required = 10,
@@ -125,15 +125,16 @@ if data.raw["asteroid-collector"]["asteroid-collector"] then
       {
         layers =
         {
-          util.sprite_load("__space-age__/graphics/entity/asteroid-collector/asteroid-collector-top-north",
+          util.sprite_load("__space-age__/graphics/entity/asteroid-collector/asteroid-collector-top-north-base",
+          {
+            repeat_count = 16,
+            scale = 0.5,
+          }),
+          util.sprite_load("__space-age__/graphics/entity/asteroid-collector/asteroid-collector-top-north-anim",
           {
             frame_count = 16,
             scale = 0.5,
-            animation_speed = 3,
-            width = 236,
-            height = 266,
-            --shift = util.by_pixel( 0.0, -11.0),
-            line_length = 4,
+            animation_speed = 3
           }),
           util.sprite_load("__space-age__/graphics/entity/asteroid-collector/asteroid-collector-shadow",
           {
@@ -157,15 +158,17 @@ if data.raw["asteroid-collector"]["asteroid-collector"] then
       {
         layers =
         {
-          util.sprite_load("__space-age__/graphics/entity/asteroid-collector/asteroid-collector-top-east",
+          
+          util.sprite_load("__space-age__/graphics/entity/asteroid-collector/asteroid-collector-top-east-base",
+          {
+            repeat_count = 16,
+            scale = 0.5,
+          }),
+          util.sprite_load("__space-age__/graphics/entity/asteroid-collector/asteroid-collector-top-east-anim",
           {
             frame_count = 16,
             scale = 0.5,
-            animation_speed = 3,
-            width = 280,
-            height = 228,
-            --shift = util.by_pixel( 10.5, 2.0),
-            line_length = 4,
+            animation_speed = 3
           }),
           util.sprite_load("__space-age__/graphics/entity/asteroid-collector/asteroid-collector-shadow",
           {
@@ -189,15 +192,16 @@ if data.raw["asteroid-collector"]["asteroid-collector"] then
       {
         layers =
         {
-          util.sprite_load("__space-age__/graphics/entity/asteroid-collector/asteroid-collector-top-south",
+          util.sprite_load("__space-age__/graphics/entity/asteroid-collector/asteroid-collector-top-south-base",
+          {
+            repeat_count = 16,
+            scale = 0.5,
+          }),
+          util.sprite_load("__space-age__/graphics/entity/asteroid-collector/asteroid-collector-top-south-anim",
           {
             frame_count = 16,
             scale = 0.5,
-            animation_speed = 3,
-            width = 238,
-            height = 254,
-            --shift = util.by_pixel( 0.5, 6.0),
-            line_length = 4,
+            animation_speed = 3
           }),
           util.sprite_load("__space-age__/graphics/entity/asteroid-collector/asteroid-collector-shadow",
           {
@@ -221,11 +225,16 @@ if data.raw["asteroid-collector"]["asteroid-collector"] then
       {
         layers =
         {
-          util.sprite_load("__space-age__/graphics/entity/asteroid-collector/asteroid-collector-top-west",
+          util.sprite_load("__space-age__/graphics/entity/asteroid-collector/asteroid-collector-top-west-base",
+          {
+            repeat_count = 16,
+            scale = 0.5,
+          }),
+          util.sprite_load("__space-age__/graphics/entity/asteroid-collector/asteroid-collector-top-west-anim",
           {
             frame_count = 16,
             scale = 0.5,
-            animation_speed = 3,
+            animation_speed = 3
           }),
           util.sprite_load("__space-age__/graphics/entity/asteroid-collector/asteroid-collector-shadow",
           {
